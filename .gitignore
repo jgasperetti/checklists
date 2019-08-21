@@ -6,3 +6,5 @@
 *.out
 *.fdb_latexmk
 *.gz
+.DS_Store
+.watchmanconfig
