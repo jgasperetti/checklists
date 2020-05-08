@@ -390,29 +390,36 @@
       \clitem{Max Crosswind}{15}
     \end{clitemize}
 
-    \configheading{TAKEOFF CFGS}
-
-    \configsubheading{NORMAL}
+    \configsubheading{NORMAL TAKEOFF}
 
     \begin{clitemize}
       \clitem{Flaps}{0\textdegree}
-      \clitem{Rotate}{55}
-      \clitem{Climb}{74}
     \end{clitemize}
+    \begin{tabu}{X@{\hspace{1em}}X}
+      \splititem{Rotate}{55} & \splititem{Climb}{74} \\
+    \end{tabu}
 
-    \configsubheading{SHORT}
+    \configsubheading{SHORT TAKEOFF}
 
     \begin{clitemize}
       \clitem{Flaps}{10\textdegree}
+      \item Use Entire Pavement
       \clitem{Brakes}{Apply}
       \clitem{Climb}{56}
-      \clitem{Flaps}{Up at >60 KIAS}
+      \clitem{Flaps}{Up >60 KIAS}
     \end{clitemize}
 
+    \configsubheading{SOFT TAKEOFF}
 
-    \configheading{APPROACH}
+    \begin{clitemize}
+      \clitem{Flaps}{10\textdegree}
+      \clitem{Elevator}{Full Up}
+      \item Ground Effect
+      \clitem{Climb}{74}
+      \clitem{Flaps}{Up >60 KIAS}
+    \end{clitemize}
 
-    \configsubheading{NORMAL}
+    \configsubheading{NORMAL LANDING}
 
     \begin{clitemize}
       \clitem{Downwind}{85}
@@ -420,9 +427,19 @@
       \clitem{Final}{60 - 70}
     \end{clitemize}
 
+    \configsubheading{SHORT LANDING}
+
+    \begin{clitemize}
+      \clitem{Short Final}{61}
+      \item Touchdown
+      \clitem{Flaps}{Up}
+      \clitem{Breaks}{Heavy}
+      \clitem{Yoke}{Back}
+    \end{clitemize}
+
   \vfill
   \begin{flushright}
-  v1.1
+  v1.2
   \end{flushright}
   \end{multicols*}
 \end{document}
