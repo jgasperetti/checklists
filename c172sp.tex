@@ -11,22 +11,28 @@
 \usepackage[table]{xcolor}
 \usepackage[T1]{fontenc}
 \usepackage{tabu}
+\usepackage{setspace}
 
 \newcommand{\bestglide}{68}
 \newcommand{\idlethrottle}{\clitem{Throttle}{1,000 RPM}}
 \newcommand{\mixlean}{\clitem{Mixture}{Lean}}
 \newcommand{\mixrich}{\clitem{Mixture}{Rich}}
 
-\setlength{\tabcolsep}{0pt}
+\definecolor{sky}{RGB}{52,107,235}
+\newcommand{\groundcolor}{green!50!black}
+\newcommand{\flightcolor}{sky}
 
-%\addtolength\evensidemargin {-0.2cm}
+\newcommand{\groundheading}[1]{\columnheading{\groundcolor}{#1}}
+\newcommand{\flightheading}[1]{\columnheading{\flightcolor}{#1}}
+
+\setlength{\tabcolsep}{0pt}
 
 \begin{document}
   \include{common}
 
-  \switchheading{C172SP GROUND PROCEDURES}
+  \columnheading{black}{C172SP GROUND PROCEDURES}
   \begin{multicols*}{3}
-    \flightheading{DISPATCH}
+    \groundheading{DISPATCH}
 
     \begin{clitemize}
       \clitem{Weather}{Brief}
@@ -38,7 +44,7 @@
       \clitem{Squawks}{Check}
     \end{clitemize}
 
-    \flightheading{INTERIOR}
+    \groundheading{INTERIOR}
     \begin{clitemize}
       \clitem{Pitot Cover}{Remove}
       \clitem{Papers}{AROW}
@@ -61,7 +67,7 @@
     \end{clitemize}
 
 
-    \flightheading{EXTERIOR}
+    \groundheading{EXTERIOR}
     \begin{clitemize}
       \clitem{Fuel}{Quantity}
       \clitem{Fuel}{Quality}
@@ -84,11 +90,11 @@
       \columnbreak%
       \clitem{Baggage Door}{Closed}
       \clitem{Ties/Chocks}{Removed}
-      \clitem{Walk Around}{}
+      \item Walk Around
     \end{clitemize}
 
 
-    \flightheading{START}
+    \groundheading{START}
     \begin{clitemize}
       \clitem{Passengers}{Brief}
       \clitem{Brakes}{Set}
@@ -101,13 +107,15 @@
       \clitem{Prop}{Clear}
       \clitem{Master}{On}
       \clitem{Beacon}{On}
-      \clitem{}{}
+
+      \vspace{6px}\hrule\vspace{6px}
       \clitem{Aux Fuel Pump}{On}
       \mixrich
       \clitem{Fuel Flow}{3-5 GPH}
       \clitem{Mixture}{Idle C/O}
       \clitem{Aux Fuel Pump}{Off}
-      \clitem{}{}
+
+      \vspace{6px}\hrule\vspace{6px}
       \clitem{Mags}{Start}
       \clitem{Mixture}{Rich}
       \clitem{Oil Pressure}{Green}
@@ -115,13 +123,13 @@
       \clitem{Mixture}{Lean}
     \end{clitemize}
 
-    \flightheading{PRE-TAXI}
+    \groundheading{PRE-TAXI}
     \begin{clitemize}
       \clitem{Seat Belts}{Check}
       \clitem{Flaps}{Up}
       \clitem{Heat/Vent/Defrost}{Check}
       \clitem{Avionics}{On}
-      \clitem{Atis}{Get}
+      \clitem{ATIS}{Get}
       \clitem{Altimeter}{Set}
       \clitem{XPDR}{Alt. \& Sqwk}
       \clitem{ADS-B}{On}
@@ -130,7 +138,7 @@
       \clitem{Brakes}{Test}
     \end{clitemize}
 
-    \flightheading{TAXI}
+    \groundheading{TAXI}
     \begin{clitemize}
       \clitem{Controls}{Wind}
       \clitem{Attitude Indicator}{Check}
@@ -140,12 +148,12 @@
 
     \columnbreak%
 
-    \flightheading{RUNUP}
+    \groundheading{RUNUP}
 
     \begin{clitemize}
       \clitem{Brakes}{Set}
       \clitem{Fuel}{Both}
-      \clitem{Controls}{Free \& Correct}
+      \clitem{Controls}{Free \& Corr}
       \clitem{Annunciators}{Check}
       \clitem{Instruments}{Check}
       \clitem{Mixture}{Best Power}
@@ -161,9 +169,9 @@
       \clitem{Radios}{Set}
     \end{clitemize}
 
-    \switchheading{SWITCH TO FLIGHT}
+    \flightheading{SWITCH TO FLIGHT}
 
-    \flightheading{SHUTDOWN}
+    \groundheading{SHUTDOWN}
 
     \begin{clitemize}
       \clitem{ELT}{Check 121.5}
@@ -175,7 +183,7 @@
       \clitem{Lights}{Off}
     \end{clitemize}
 
-    \flightheading{SECURING}
+    \groundheading{SECURING}
 
     \begin{clitemize}
       \clitem{Hobbs \& Tach}{Record}
@@ -211,29 +219,31 @@
 
   \switchheading{C172SP FLIGHT PROCEDURES}
   \begin{multicols*}{3}
-    \flightheading{PRE-TAKEOFF}
+    \groundheading{PRE-TAKEOFF}
 
     \begin{clitemize}
       \clitem{Runway}{Check}
       \clitem{Technique}{Note}
       \clitem{Crosswind}{Check}
       \clitem{Abort Plan}{Brief}
-      \clitem{TPA}{Brief}
-      \clitem{Time}{Note}
-      \clitem{HI}{Set To Compass}
+      \clitem{TPA/Departure}{Brief}
+
+      \vspace{6px}\hrule\vspace{6px}
+      \clitem{HI}{Set \& Bug}
       \clitem{Flaps}{Set}
       \clitem{Trim}{Takeoff}
       \clitem{Lights}{On}
       \clitem{XPDR}{Set}
       \clitem{Mixture}{Best Power}
+      \clitem{Time}{Note}
     \end{clitemize}
 
     \flightheading{CLIMB}
 
     \begin{clitemize}
-      \clitem{70-85 KIAS}{}
+      \clitem{Speed}{70-85}
       \clitem{Flaps}{Up}
-      \clitem{Power}{Set}
+      \clitem{Power}{Full}
       \clitem{Mixture}{Lean >3k}
       \clitem{Engine Inst.}{Check}
     \end{clitemize}
@@ -251,7 +261,7 @@
     \begin{clitemize}
       \clitem{Fuel}{Both}
       \clitem{Power}{Set}
-      \clitem{Mixture}{Lean >3k}
+      \clitem{Mixture}{Enrich}
       \clitem{Instruments}{Check}
       \clitem{Lights}{On}
       \clitem{ATIS}{Get}
@@ -265,9 +275,9 @@
       \clitem{Seat Belts}{Secured}
       \clitem{Fuel}{Both}
       \clitem{Brakes}{Test}
-      \clitem{Mixture}{Best Power}
-      \clitem{Flaps}{As Req'd}
+      \clitem{Mixture}{Rich}
       \clitem{Lights}{On}
+      \clitem{Flaps}{As Req'd}
     \end{clitemize}
 
     \flightheading{AFTER LANDING}
@@ -345,7 +355,7 @@
       \clitem{Master}{Off}
       \clitem{Heat \& Air}{Close}
       \clitem{Airspeed}{100+}
-      \clitem{Forced Landing}{Execute}
+      \item \textbf{Forced Landing}
     \end{clitemize}
 
     \columnbreak%
@@ -365,13 +375,13 @@
     \configheading{IMPORTANT NUM.}
 
     \begin{tabu}{X@{\hspace{1em}}X}
-      V\sub{X} \dotfill 62 & V\sub{Y} \dotfill 74 \\
-      V\sub{S\sub{0}} \dotfill 40 & V\sub{S\sub{1}} \dotfill 48 \\
-      V\sub{FE 10} \dotfill 110 & V\sub{FE} \dotfill 85 \\
-      V\sub{NO} \dotfill 129 & V\sub{NE} \dotfill 163 \\
-      V\sub{ROT} \dotfill 55 & V\sub{A\sub{2550}} \dotfill 105 \\
-      V\sub{A\sub{2200}} \dotfill 98 & V\sub{A\sub{1900}} \dotfill 90 \\
-      Fuel \dotfill 56 & Usable \dotfill 53 \\
+      \splititem{V\sub{X}}{62} & \splititem{V\sub{Y}}{74} \\
+      \splititem{S\sub{0}}{40} & \splititem{V\sub{S\sub{1}}}{48} \\
+      \splititem{V\sub{FE 10}}{110} & \splititem{V\sub{FE}}{85} \\
+      \splititem{V\sub{NO}}{129} & \splititem{V\sub{NE}}{163} \\
+      \splititem{V\sub{ROT}}{55} & \splititem{V\sub{A\sub{2550}}}{105} \\
+      \splititem{V\sub{A\sub{2200}}}{98} & \splititem{V\sub{A\sub{1900}}}{90} \\
+      \splititem{Fuel}{56} & \splititem{Usable}{53} \\
     \end{tabu}
 
     \begin{clitemize}
@@ -410,5 +420,9 @@
       \clitem{Final}{60 - 70}
     \end{clitemize}
 
+  \vfill
+  \begin{flushright}
+  v1.1
+  \end{flushright}
   \end{multicols*}
 \end{document}
